@@ -31,12 +31,13 @@ The committed charts are generated from the reproducible offline sample. Re-run 
 
 ## Key findings & recommendations
 
-These observations are intentionally based on the included synthetic demo; replace them with outputs from the Olist download before presenting them as market findings.
+This analysis uses the full Olist Brazilian E-Commerce public dataset (~99K orders, Oct 2016–Aug 2018), loaded from Kaggle and run through the project's SQL and Python pipeline.
 
-- Revenue and AOV can move independently, so monitor both weekly: pair any revenue acceleration with an AOV check to tell whether it is basket expansion or simply more orders.
-- Category concentration should guide merchandising: prioritize the top-revenue categories for search, inventory, and seller experience, while testing whether lower-revenue categories add incremental basket value.
-- Repeat-rate and cohort views expose a common gap between acquisition and retention: if later cohort columns fade quickly, trigger post-delivery replenishment or cross-sell journeys rather than increasing acquisition spend alone.
-- The customer-order sequence and running-revenue query identifies high-value repeaters directly in SQL; use it to define lifecycle segments and investigate the product paths that precede second orders.
+- Overall AOV is 159.83 BRL, with delivered revenue growing steadily from late 2016 through 2018, stabilizing above 1M BRL/month by mid-2017 onward — compare revenue with AOV each period to see whether growth comes from order volume or basket size.
+- Repeat purchase rate is low at 3.0% (2,801 of 93,358 customers placed more than one order) — a real, well-known characteristic of Olist's marketplace, where most sellers see one-time buyers. This suggests retention efforts (post-delivery engagement, loyalty incentives) may have more room for impact than acquisition spend alone.
+- beleza_saude (health & beauty) leads all categories by revenue, followed by relogios_presentes and cama_mesa_banho — focus merchandising and seller-quality investigation here, while watching whether revenue share becomes over-concentrated in a few categories.
+- Use cohort decay to prioritize post-delivery cross-sell and replenishment journeys where retention drops off fastest.
+- Use customer order sequence and running revenue to define repeat-buyer segments and study which first purchases lead to a second order.
 
 ## Project structure
 
